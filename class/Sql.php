@@ -13,7 +13,7 @@ class Sql extends PDO {
 
 		foreach ($parameters as $key => $value){
 
-			$this->birdParam($key, $value);
+			$this->setParam($statment, $key, $value);
 
 		}
 
@@ -21,7 +21,7 @@ class Sql extends PDO {
 
 	private function setParam($statment, $key, $value){
 
-		$statment->birdParam($key, $value);
+		$statment->bindParam($key, $value);
 	}
 
 	public function query($rawQuery, $params = array()){
