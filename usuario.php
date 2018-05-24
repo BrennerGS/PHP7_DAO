@@ -2,7 +2,7 @@
 
 require_once("config.php");
 
-	//Carrega um usuário 
+	//Carrega um usuario 
 //$root = new Usuario();
 //$root->loadbyId(4);
 //echo $root;
@@ -21,14 +21,14 @@ foreach ($lista as $key => $value) {
 	echo "  |  ".$value["pimeiro_cadastro"];
 }
 	*/
-	//carrega uma lista de usuários buscando pelo login  usando SuaPagina.php?p=Sua Pesquisa
+	//carrega uma lista de usuarios buscando pelo login  usando SuaPagina.php?p=Sua Pesquisa
 /*
 @$p = $_GET["p"];
 $search = Usuario::search("$p");
 
 echo json_encode($search);
 */
-	//carregando um usuário usando um login e a senha
+	//carregando um usuario usando um login e a senha
 //$usuario = new Usuario();
 //$usuario->login("root", "!@%#$&");
 
