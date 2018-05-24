@@ -2,24 +2,23 @@
 
 require_once("config.php");
 
-//Carrega um usuário 
-//$root = new Usuario();
-//$root->loadbyId(2);
-//echo $root;
+$sql = new Sql();
 
-//Carrega uma lista de usuario
-//$lista = Usuario::getList();
+$usuarios = $sql->select("SELECT * FROM tb_usuarios ");
 
-//echo json_encode($lista);
+//echo json_encode($usuarios);
+$contar = count($usuarios);
+$contar--;
+foreach ($usuarios as $key => $value) {
+	echo "id: ".$value["idusuario"]."<br/>";
+	echo "login: ".$value["deslogin"]."<br/>";
+	echo "senha: ".$value["dessenha"]."<br/>";
+	echo "data de cadastro: ".$value["dtcadastro"]."<br/>";
+	echo "Ultima atualização: ".$value["pimeiro_cadastro"];
+	if($key<$contar){
+		echo "<br/><br/>Outro:<br/><br/>";
+	}
+	
+}
 
-//carrega uma lista de usuários buscando pelo login
-//$search = Usuario::search("ro");
-
-//echo json_encode($search);
-
-//carregando um usuário usando um login e a senha
-$usuario = new Usuario();
-$usuario->login("root", "!@%#$&");
-
-echo $usuario;
 ?>
